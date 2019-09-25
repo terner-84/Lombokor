@@ -5,6 +5,10 @@
     
     <typeAliases>
         <typeAlias alias = "Item" type = "cz.terner.lombokor.beans.Item"/>
+        <typeAlias alias = "PrCatalogue" type = "cz.terner.lombokor.beans.PrCatalogue" />
+        <typeAlias alias = "MassPlus" type = "cz.terner.lombokor.beans.MassPlus" />
+        <typeAlias alias = "MassPlusParams" type = "cz.terner.lombokor.beans.MassPlusParams" />
+        <typeAlias alias = "MassPrs" type = "cz.terner.lombokor.beans.MassPrs" />
     </typeAliases>
 		
     <environments default = "development">

@@ -10,8 +10,89 @@
         <result property = "it_price" column = "it_price"/>
     </resultMap>
     
+    <resultMap id = "resultMassPlus" type = "MassPlus">
+        <result property = "massId" column = "mass_id" />
+        <result property = "dateMan" column = "date_man" />
+        <result property = "pr" column = "pr" />
+        <result property = "frontAxle" column = "front_axle" />
+        <result property = "backAxle" column = "back_axle" />
+        <result property = "totalMass" column = "total_mass" />
+    </resultMap>
+    
     <select id="selectAll" parameterType="int" resultMap="result">
-        SELECT * FROM terner.items LIMIT #{int}
+        SELECT * FROM terner.items 
+        <trim>
+            
+        </trim>
+        LIMIT #{int}
+    </select>
+    
+    <insert id="prns" parameterType="java.util.Collection">
+        INSERT INTO terner.pr_cat (pr)
+        VALUES
+        <foreach collection="collection" item="item" index="index" open="(" separator="), (" close=")">
+            #{item}
+        </foreach>
+    </insert>
+    
+    <insert id="catFill" parameterType="java.util.Collection">
+        INSERT INTO terner.pr_catalogue
+        VALUES
+        <foreach collection="collection" item="PrCatalogue" index="index" open="(" separator="), (" close=")">
+            #{PrCatalogue.modelNum},
+            #{PrCatalogue.pr}
+        </foreach>
+    </insert>
+    
+    <insert id="fillMassPrs" parameterType="java.util.Collection">
+        INSERT INTO terner.mass_pr (mass_pr, mass_mass)
+        VALUES
+        <foreach collection="collection" item="MassPrs" index="index" open="(" separator="), (" close=")">
+            #{MassPrs.pr},
+            #{MassPrs.mass}
+        </foreach>
+    </insert>
+    
+    <select id="selectMassWithRelevanrPrns" resultMap="">
+        select *,
+        (select sum(ccc.mass_mass) as vysledek from 
+        (select pr_catalogue.pr, mass_pr.mass_mass 
+        from terner.pr_catalogue 
+        inner join terner.mass_pr on pr_catalogue.pr = mass_pr.pr 
+        where pr_catalogue.model_num = mass.mass_id) as ccc) 
+        as relevant_prns_mass 
+        from terner.mass
+    </select>
+    
+    <select id="pseudoMass" resultMap="resultMassPlus" parameterType = "MassPlusParams">
+        SELECT *, front_axle + back_axle as total_mass FROM terner.mass
+        <trim prefix="WHERE" prefixOverrides="AND |OR ">
+            <if test="pr != null and prs != null">
+                mass_id IN (SELECT model_num FROM terner.pr_catalogue
+                WHERE pr_catalogue.pr IN
+                <foreach collection="prs" item="string" index="index" open="(" separator=", " close=")">
+                    #{string}
+                </foreach>
+                GROUP BY (model_num) HAVING COUNT(pr) = #{prsSize}
+                )
+            </if>
+        </trim>
+    </select>
+    
+    <insert id="massFill" parameterType="java.util.Collection">
+        INSERT INTO terner.mass (mass_id, date_man, pr, front_axle, back_axle)
+        VALUES
+        <foreach collection="collection" item="Mass" index="index" open="(" separator="), (" close=")">
+            #{Mass.massId},
+            #{Mass.dateMan},
+            #{Mass.pr},
+            #{Mass.frontAxle},
+            #{Mass.backAxle}
+        </foreach>
+    </insert>
+    
+    <select id="loadPrns" resultType="string">
+        SELECT pr FROM terner.pr_cat
     </select>
    
     <insert id="insert" parameterType="java.util.List">
