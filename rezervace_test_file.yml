@@ -1,0 +1,123 @@
+M2: 
+- !cz.terner.lombokor.zasedacka.Rezervace
+   casRezervace: 450
+   datumRezervace: 2019-12-05 20:01:35
+   rezervacniDoba: 60
+   uzivatel: Maggie
+- !cz.terner.lombokor.zasedacka.Rezervace
+   casRezervace: 510
+   datumRezervace: 2019-12-05 20:01:35
+   rezervacniDoba: 60
+   uzivatel: Homer
+- !cz.terner.lombokor.zasedacka.Rezervace
+   casRezervace: 570
+   datumRezervace: 2019-12-06 20:01:35
+   rezervacniDoba: 105
+   uzivatel: Dr. Dlaha
+- !cz.terner.lombokor.zasedacka.Rezervace
+   casRezervace: 675
+   datumRezervace: 2019-12-06 20:01:35
+   rezervacniDoba: 105
+   uzivatel: Marge
+- !cz.terner.lombokor.zasedacka.Rezervace
+   casRezervace: 780
+   datumRezervace: 2019-12-06 20:01:35
+   rezervacniDoba: 60
+   uzivatel: Bobby
+- !cz.terner.lombokor.zasedacka.Rezervace
+   casRezervace: 840
+   datumRezervace: 2019-12-05 20:01:35
+   rezervacniDoba: 60
+   uzivatel: Marge
+- !cz.terner.lombokor.zasedacka.Rezervace
+   casRezervace: 855
+   datumRezervace: 2019-12-06 20:01:35
+   rezervacniDoba: 105
+   uzivatel: Mr. Burns
+- !cz.terner.lombokor.zasedacka.Rezervace
+   casRezervace: 1005
+   datumRezervace: 2019-12-05 20:01:35
+   rezervacniDoba: 105
+   uzivatel: Marge
+M3: 
+- !cz.terner.lombokor.zasedacka.Rezervace
+   casRezervace: 450
+   datumRezervace: 2019-12-05 20:01:35
+   rezervacniDoba: 60
+   uzivatel: Bobby
+- !cz.terner.lombokor.zasedacka.Rezervace
+   casRezervace: 510
+   datumRezervace: 2019-12-05 20:01:35
+   rezervacniDoba: 60
+   uzivatel: Homer
+- !cz.terner.lombokor.zasedacka.Rezervace
+   casRezervace: 525
+   datumRezervace: 2019-12-05 20:01:35
+   rezervacniDoba: 105
+   uzivatel: "L\u00edza"
+- !cz.terner.lombokor.zasedacka.Rezervace
+   casRezervace: 630
+   datumRezervace: 2019-12-05 20:01:35
+   rezervacniDoba: 105
+   uzivatel: Bart
+- !cz.terner.lombokor.zasedacka.Rezervace
+   casRezervace: 780
+   datumRezervace: 2019-12-05 20:01:35
+   rezervacniDoba: 60
+   uzivatel: Dr. Dlaha
+- !cz.terner.lombokor.zasedacka.Rezervace
+   casRezervace: 795
+   datumRezervace: 2019-12-05 20:01:35
+   rezervacniDoba: 60
+   uzivatel: Dr. Dlaha
+- !cz.terner.lombokor.zasedacka.Rezervace
+   casRezervace: 900
+   datumRezervace: 2019-12-06 20:01:35
+   rezervacniDoba: 105
+   uzivatel: Bobby
+- !cz.terner.lombokor.zasedacka.Rezervace
+   casRezervace: 1005
+   datumRezervace: 2019-12-05 20:01:35
+   rezervacniDoba: 105
+   uzivatel: "L\u00edza"
+M1: 
+- !cz.terner.lombokor.zasedacka.Rezervace
+   casRezervace: 450
+   datumRezervace: 2019-12-06 20:01:35
+   rezervacniDoba: 105
+   uzivatel: Bobby
+- !cz.terner.lombokor.zasedacka.Rezervace
+   casRezervace: 555
+   datumRezervace: 2019-12-06 20:01:35
+   rezervacniDoba: 60
+   uzivatel: Bart
+- !cz.terner.lombokor.zasedacka.Rezervace
+   casRezervace: 570
+   datumRezervace: 2019-12-05 20:01:35
+   rezervacniDoba: 105
+   uzivatel: Homer
+- !cz.terner.lombokor.zasedacka.Rezervace
+   casRezervace: 675
+   datumRezervace: 2019-12-06 20:01:35
+   rezervacniDoba: 105
+   uzivatel: "L\u00edza"
+- !cz.terner.lombokor.zasedacka.Rezervace
+   casRezervace: 825
+   datumRezervace: 2019-12-05 20:01:35
+   rezervacniDoba: 60
+   uzivatel: Maggie
+- !cz.terner.lombokor.zasedacka.Rezervace
+   casRezervace: 840
+   datumRezervace: 2019-12-06 20:01:35
+   rezervacniDoba: 105
+   uzivatel: Marge
+- !cz.terner.lombokor.zasedacka.Rezervace
+   casRezervace: 945
+   datumRezervace: 2019-12-06 20:01:35
+   rezervacniDoba: 60
+   uzivatel: Marge
+- !cz.terner.lombokor.zasedacka.Rezervace
+   casRezervace: 1005
+   datumRezervace: 2019-12-06 20:01:35
+   rezervacniDoba: 60
+   uzivatel: "L\u00edza"

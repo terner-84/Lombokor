@@ -3,6 +3,8 @@ package cz.terner.lombokor.loggor;
 
 import java.io.IOException;
 import java.util.Random;
+import java.util.Set;
+import java.util.TreeSet;
 import java.util.logging.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -17,7 +19,7 @@ import org.apache.logging.log4j.core.layout.PatternLayout;
 
 
 public class TestLog {
-    static { System.setProperty("logPath", "C:/logfiles"); }
+    /*static { System.setProperty("logPath", "C:/logfiles"); }
     static {
         Cobu c = new Cobu();
         Configurator.initialize(c.x().build());
@@ -27,14 +29,28 @@ public class TestLog {
             java.util.logging.Logger.getLogger(TestLog.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    private static final Logger LOGGER = LogManager.getLogger(TestLog.class.getName());
+    private static final Logger LOGGER = LogManager.getLogger(TestLog.class.getName());*/
     
     
     public static void main(String[] args) {
-        //System.setProperty();
+        Set<String> alfa = new TreeSet<>();
+        Set<String> beta = new TreeSet<>();
+        
+        alfa.add("A01");
+        alfa.add("A02");
+        alfa.add("A03");
+        
+        Set<String> gamma = new TreeSet<>(alfa);
+        
+        beta.add("A02");
+        beta.add("A03");
+        beta.add("B02");
+        gamma.addAll(beta);
         
         
-        System.out.println(System.getProperty("logPath"));
-        LOGGER.debug("Hello logger " + new Random().nextDouble() + " engl§n");
+        alfa.retainAll(beta);
+        gamma.removeAll(alfa);
+        System.out.println(alfa);
+        System.out.println(gamma);
     }
 }
