@@ -19,7 +19,7 @@ public class RizeniRezervaci {
     public static final int MINIMALNI_POCATEK_REZERVACE = POCET_MINUT_V_HODINE * 6;
     public static final int MAXIMALNI_KONEC_REZERVACE = POCET_MINUT_V_HODINE * 17;
     
-    public static void vratitVolneCasyProMistnostADatum(Map<Mistnost, List<Rezervace>> testovaciRezervace, Mistnost m) {
+    public static List<VolneCasy> vratitVolneCasyProMistnostADatum(Map<Mistnost, List<Rezervace>> testovaciRezervace, Mistnost m) {
         List<Rezervace> vybranePodleMistnosti = testovaciRezervace.get(m);
         Map<String, List<Rezervace>> rezervacePodleDatumu = vybranePodleMistnosti.stream().collect(Collectors.groupingBy(c -> 
                 String.format("%d-%d-%d", c.getDatumRezervace().get(Calendar.YEAR),c.getDatumRezervace().get(Calendar.MONTH)+1,c.getDatumRezervace().get(Calendar.DAY_OF_MONTH))));
@@ -61,5 +61,6 @@ public class RizeniRezervaci {
         volneCasy.forEach(vc -> {
             System.out.println(vc.getFreeTime() + " " + vc.getStart() + " - " + vc.getEnd());
         });
+        return volneCasy;
     }
 }
