@@ -14,11 +14,11 @@ import java.util.Properties;
 public class Mail {
 
     public static void main(String[] args) {
-        String recipient = "hanus.ctirad@seznam.cz";
-        String sender = "ctiradorama@gmail.com";
+        String recipient = "";
+        String sender = "";
         String host = "smtp.gmail.com";
         String port = "587";
-        String password = "FTuxAW735";
+        String password = "";
 
         Properties props = System.getProperties();
         props.setProperty("mail.smtp.host", host);
