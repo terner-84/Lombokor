@@ -25,7 +25,7 @@ public class MongoHandler {
     
     public MongoHandler() {
         mClient = new MongoClient("localhost", 27017);
-        db = mClient.getDatabase("desiree");
+        db = mClient.getDatabase("terner_items");
        
     }
     
@@ -41,7 +41,8 @@ public class MongoHandler {
     }
     
     public void newDoc(String collection, int count) {
-        db.createCollection(collection);
+        //db.createCollection(collection);
+        //db.getCollection(collection);
         MongoCollection mongoCollection = db.getCollection(collection);
         List<Document> docList = new ArrayList<>();
         Profiler.s();

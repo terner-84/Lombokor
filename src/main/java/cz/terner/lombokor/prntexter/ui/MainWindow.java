@@ -132,6 +132,7 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void btnSelectFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSelectFileActionPerformed
         JFileChooser fc = new JFileChooser();
+        fc.setFileFilter(new CsvFileFilter());
         int returnVal = fc.showOpenDialog(new CsvFileChooser());
         if (returnVal == JFileChooser.APPROVE_OPTION) {
             f = fc.getSelectedFile();

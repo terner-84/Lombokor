@@ -44,14 +44,25 @@ public class CsvItemParser {
         return sb.toString();
     }
     
-    public String examinePrns(String prn) {
-        Pattern pattern = Pattern.compile("[^/]{1}[" + prn + "]{3}[^/]{1}");
+    public String examinePrns(String prns) {
+        String[] prnsArr = prns.split(";");
+        List<VssItem> visList = new ArrayList<>();
+        List<Pattern> patterns = new ArrayList<>();
+        for (String prnsArr1 : prnsArr) {
+            Pattern pattern = Pattern.compile("[^/]{1}[" + prnsArr1 + "]{3}[^/]{1}");
+            patterns.add(pattern);
+        }
         vssItems.forEach(item -> {
-            Matcher matcher = pattern.matcher(item.getPrns());
-            if (matcher.find()) {
-                System.out.println(item.getPrns());
-            }
+            patterns.forEach(pattern -> {
+                Matcher matcher = pattern.matcher(item.getPrns());
+                if (matcher.find()) {
+                    System.out.println(item.getPrns());
+                    visList.add(item);
+                }
+            });
         });
+        
+        
         return "null";
     }
     

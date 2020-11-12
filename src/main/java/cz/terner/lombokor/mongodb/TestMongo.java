@@ -22,7 +22,7 @@ public class TestMongo {
     
     public static void main(String[] args) {
         MongoHandler mh = new MongoHandler();
-        mh.newDoc("ctirad", 500000);
+        mh.newDoc("ternerius", 5000);
     }
     
     public static void handlePrns(String[] args) {
